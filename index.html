@@ -1,0 +1,594 @@
+<!--
+ ┌──────────────────────────────────────────────────────────────────────┐
+ │ @name         CV generator                                           │
+ │ @author       Léa Gallier                                            │
+ │ @version      1.0                                                    │
+ │ @created      2022-12-19                                             │
+ │ @modified     2023-03-17                                             │
+ │ @description  Resume CV with dark/light mode and PDF export          │
+ └──────────────────────────────────────────────────────────────────────┘
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Responsive Resume CV</title>
+
+        <!-- Import Fontawesome -->
+        <script src="https://kit.fontawesome.com/cb81440751.js" crossorigin="anonymous"></script>
+
+        <!-- Import stylesheets in CSS3 -->
+        <link rel="stylesheet" href="assets/stylesheets/style.css" type="text/css">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/pictures/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/pictures/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/pictures/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="assets/pictures/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="assets/pictures/favicon/android-chrome-512x512.png">
+    </head>
+
+    <body>
+        <header class="l-header" id="header">
+            <!-- Nav menu -->
+            <nav class="nav bd-container">
+                <a href="#" class="nav_logo">Maxmudbek Muzaffarov</a>
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list">
+
+                        <li class="nav_item">
+                            <a href="#home" class="nav_link active-link">
+                                <i class="fa-solid fa-house nav_icon"></i>Home
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#profile" class="nav_link">
+                                <i class="fa-solid fa-user nav_icon"></i>Profile
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#skills" class="nav_link">
+                                <i class="fa-solid fa-computer nav_icon"></i>Skills
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#languages" class="nav_link">
+                                <i class="fa-solid fa-comments nav_icon"></i>Languages
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#experience" class="nav_link">
+                                <i class="fa-solid fa-briefcase nav_icon"></i>Experiences
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#certificates" class="nav_link">
+                                <i class="fa-solid fa-graduation-cap nav_icon"></i>Certificates
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#education" class="nav_link">
+                                <i class="fa-solid fa-book-bookmark nav_icon"></i>Education
+                            </a>
+                        </li>
+
+                        <li class="nav_item">
+                            <a href="#interests" class="nav_link">
+                                <i class="fa-solid fa-icons nav_icon"></i>Interests
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main bd-container">
+            <!-- Resume CV -->
+            <div class="resume" id="area-cv">
+                <div class="resume_left">
+
+                    <!-- HOME -->
+                    <section class="home" id="home">
+                        <div class="home_container section bd-grid">
+
+                            <div class="home_data bd-grid">
+                                <img src="assets/pictures/profile.png" alt="Icon picture" class="home_img" id="home-img">
+                                <!--<img alt="Icon picture" class="home_img" id="home-img">-->
+                                <h1 class="home_title">Maxmudbek <b>Muzaffarov</b></h1>
+                                <h3 class="home_profession">Software Engineer</h3>
+                                <div>
+                                    <a download="" id="download-button" class="home_button-movil">Download</a>
+                                </div>
+                            </div>
+
+                            <div class="home_address bd-grid">
+                                <span class="home_information">
+                                    <i class="fa-solid fa-location-dot home_icon"></i> Uchtepa tumani Orikzor kochasi 242 - Tashkent
+                                </span>
+                                <span class="home_information">
+                                    <a href="mailto:muzaffarovmahmudbek@gmail.com" class="home_link">
+                                        <i class="fa-solid fa-envelope home_icon"></i> muzaffarovmahmudbek@gmail.com
+                                    </a>
+                                </span>
+                                
+                                <span class="home_information">
+                                    <a href="tel:+998995245504" class="home_link">
+                                        <i class="fa-solid fa-phone home_icon"></i> +998 99 524 55 04
+                                    </a>
+                                </span>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Theme change button -->
+                        <i class="fa-solid fa-moon change-theme" title="Theme" id="theme-button"></i>
+
+                        <!-- Button to generate and download the pdf. Available for desktop. -->
+                        <i class="fa-solid fa-download generate-pdf" title="Generate PDF" id="resume-button"></i>
+
+                    </section>
+
+                    <!-- SOCIAL -->
+                    <section class="social section">
+                        <h2 class="section-title">Social</h2>
+                    
+                        <div class="social_container bd-grid">
+                            <a href="https://github.com/TheDarkLord777" target="_blank" class="social_link">
+                                <i class="fa-brands fa-github social_icon"></i> @TheDarkLord777
+                            </a>
+                            <a href="https://t.me/TheDarkLord_777" target="_blank" class="social_link">
+                                <i class="fa-brands fa-telegram social_icon"></i> @TheDarkLord_777
+                            </a>
+                            <a href="https://discord.com/users/thedarklord_777" target="_blank" class="social_link">
+                                <i class="fa-brands fa-discord social_icon"></i> thedarklord_777
+                            </a>
+                        </div>
+                    </section>
+                    
+
+                    <!-- PROFILE -->
+                    <section class="profile section" id="profile">
+                        <h2 class="section-title">Profile</h2>
+
+                        <p class="profile_description">
+                            My name is Maxmudbek Muzaffarov, and I am currently
+                             a third-year bachelor's student in software engineering 
+                             at the Polytechnic University of Turin. I have a strong interest
+                              in IT and enjoy working on various projects
+                               in different programming languages during my free time. Although I am in my final year of study, my program spans four years, allowing me to deepen my knowledge and skills in software development
+                        </p>
+                    </section>
+
+                    <!-- SKILLS  -->
+                    <section class="skills section" id="skills">
+                        <h2 class="section-title">Skills</h2>
+                        <div class="skills_container">
+                            <div class="skills_content bd-grid">
+                                <div class="skills_name">
+                                    <span class="skills_text">CSS</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 85%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Git</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 75%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">HTML</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 95%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Javascript</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 80%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">React js</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 85%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">3D Unity</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Windows</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 100%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Godot</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 40%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Microsoft Office</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 60%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Roblox Studio</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Blender</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Telegram Bot</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Server</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">React Native</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 55%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">VirtualBox</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 70%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">PostMan</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 90%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Photoshop</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 60%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Editors</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 70%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Package Managers</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 85%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Linux</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 70%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Typescript</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 70%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Python</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 70%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Tilda</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 70%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Jira</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 60%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Figma</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 60%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Java</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">SQL</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 60%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Database</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 55%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Django</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Express js</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                                <div class="skills_name">
+                                    <span class="skills_text">Websocket</span>
+                                    <div class="skills_box">
+                                        <span class="skills_progress" style="width: 50%;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- LANGUAGES -->
+                    <section class="languages section" id="languages">
+                        <h2 class="section-title">Languages</h2>
+
+                        <div class="languages_container">
+                            <ul class="languages_content bd-grid">
+                                <li class="languages_name">
+                                    <span class="languages_text">Yapon tili</span>
+                                    <span class="languages_stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star languages_stars_checked"></i>
+                                        <i class="fa-solid fa-star languages_stars_checked"></i>
+                                        <i class="fa-solid fa-star languages_stars_checked"></i>
+                                        <i class="fa-solid fa-star languages_stars_checked"></i>
+                                    </span>
+                                </li>
+                                <li class="languages_name">
+                                    <span class="languages_text">Ingliz tili</span>
+                                    <span class="languages_stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star languages_stars_checked"></i>
+                                    </span>
+                                </li>
+                                <li class="languages_name">
+                                    <span class="languages_text">O`zbek tili</span>
+                                    <span class="languages_stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                </li>
+                                <li class="languages_name">
+                                    <span class="languages_text">Rus tili</span>
+                                    <span class="languages_stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star languages_stars_checked"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="resume_right">
+
+                   
+
+                    <!-- CERTIFICATES -->
+                    <section class="certificate section" id="certificates">
+                        <h2 class="section-title">Certificates</h2>
+                    
+                        <div class="certificate_container bd-grid">
+                            <div class="certificate_content">
+                                <div class="certificate_time">
+                                    <span class="certificate_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="certificate_data bd-grid">
+                                    <h3 class="certificate_year">2023</h3>
+                                    <span class="certificate_title">Certificate of Basic Course in Website Development</span>
+                                    
+                                    <a href="https://gcfs04.getcourse.ru/files/14696/317/6cf1b7b2111c1c02e7efacff243d9f10.png?md5=5fQMZorvmphPdIaQUfyEkw&expires=1730482034&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=3GCvDxWC2H0Nd9oILEJR%2F20241101%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20241101T152714Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=e6b593d0640a439483856ad84647eccf2ae3b976150f014520f75fb5324e5fad" target="_blank">
+                                        <i class="fa-solid fa-download"></i>
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+                    
+                            <div class="certificate_content">
+                                <div class="certificate_time">
+                                    <span class="certificate_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="certificate_data bd-grid">
+                                    <h3 class="certificate_year">2022</h3>
+                                    <span class="certificate_title">Litsey sertifikat</span>
+                                </div>
+                            </div>
+                    
+                            <div class="certificate_content">
+                                <div class="certificate_time">
+                                    <span class="certificate_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="certificate_data bd-grid">
+                                    <h3 class="certificate_year">2022</h3>
+                                    <span class="certificate_title">CEFR til sertifikati B2</span>
+                                    
+                                    <a href="https://app.dtm.uz/cefr-cert/dea210539a2bba2a007c9eb4974f459c" target="_blank">
+                                        <i class="fa-solid fa-download"></i>
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    
+
+                    <!-- EDUCATION -->
+                    <section class="education section" id="education">
+                        <h2 class="section-title">Education</h2>
+
+                        <div class="education_container bd-grid">
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="education_data bd-grid">
+                                    <h3 class="education_title">TDTU litseyi</h3>
+                                    <span class="education_studies">Talabalar kochasi 2B - Tashkent</span>
+                                    <span class="education_year">2020 - 2022</span>
+                                </div>
+                            </div>
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="education_data bd-grid">
+                                    <h3 class="education_title">Turin politexnika Universtitet</h3>
+                                    <span class="education_studies">Kichik xalqa yo`li 17 - Tashkent</span>
+                                    <span class="education_year">2022 - 2026</span>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                    </section>
+
+                    <section class="experience section" id="experience">
+                        <h2 class="section-title">Experiences</h2>
+
+                        <div class="education_container bd-grid">
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span>
+                                    <span class="education_line"></span>
+                                </div>
+                                <div class="education_data bd-grid">
+                                    <h3 class="education_title">Agrobank</h3>
+                                    <span class="education_studies">Paxtakor metro - Tashkent</span>
+                                    <span class="education_year">2024</span>
+                                </div>
+                            </div>
+                            <div class="education_content">
+                                <div class="education_time">
+                                    <span class="education_rounder"></span>
+                                </div>
+                                <div class="education_data bd-grid">
+                                    <h3 class="education_title">TBC & Payme</h3>
+                                    <span class="education_studies">Amir Temur 29</span>
+                                    <span class="education_year">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- INTERESTS -->
+                    <section class="interests section" id="interests">
+                        <h2 class="section-title">Interests</h2>
+                        <div class="interests_container bd-grid">
+                            <div class="interests_content">
+                                <i class="fa-solid fa-paw interests_icon"></i>
+                                <span class="interests_name">Animals</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-globe interests_icon"></i>
+                                <span class="interests_name">Travel</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-video interests_icon"></i>
+                                <span class="interests_name">Animes</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-leaf interests_icon"></i>
+                                <span class="interests_name">Nature</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-code interests_icon"></i>
+                                <span class="interests_name">Programming</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-ghost interests_icon"></i>
+                                <span class="interests_name">Horror games</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </section>
+
+                </div>
+            </div>
+        </main>
+
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class="fa-solid fa-arrow-up scrolltop_icon"></i>
+        </a>
+
+        <!-- HTML2PDF.js -->
+            <!-- Version 0.8.0 -->
+        <!-- <script src="assets/javascripts/html2pdf.v0.8.0.bundle.min.js"></script> -->
+            <!-- Version 0.9.3 -->
+        <script src="assets/javascripts/html2pdf.v0.9.3.bundle.min.js"></script>
+
+        <!-- Main Javascript file -->
+        <script src="assets/javascripts/main.js"></script>
+    </body>
+
+</html>
